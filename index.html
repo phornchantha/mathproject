@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crypto Theory</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Main Page -->
+  <section id="mainPage" class="active">
+    <h1>🔐 Crypto Theory Project</h1>
+    <p>Welcome! Explore classic encryption methods below:</p>
+    <button onclick="showPage('caesarPage')">📘 Caesar Cipher Theory</button>
+    <button onclick="showPage('rsaPage')">📘 RSA Cipher Theory</button>
+  </section>
+
+  <!-- Caesar Cipher Page -->
+  <section id="caesarPage">
+    <h1>📘 Caesar Cipher Theory</h1>
+    <p>This cipher shifts letters by a fixed number of positions in the alphabet.</p>
+
+    <input id="caesarText" value="hello" />
+    <input id="caesarKey" value="3" type="number" />
+    <button onclick="caesarEncrypt()">Encrypt</button>
+    <p><strong>Result:</strong> <span id="caesarResult"></span></p>
+
+    <button onclick="showPage('mainPage')">⬅ Back to Home</button>
+    <button onclick="showPage('rsaPage')">➡ RSA Cipher</button>
+  </section>
+
+  <!-- RSA Cipher Page -->
+  <section id="rsaPage">
+    <h1>📘 RSA Cipher Theory</h1>
+    <p>RSA is an encryption algorithm based on prime numbers.</p>
+
+    <label>p:</label><input id="p" value="3" type="number" />
+    <label>q:</label><input id="q" value="11" type="number" />
+    <button onclick="generateRSA()">Generate Keys</button>
+    <p id="rsaKeys"></p>
+
+    <label>Message:</label><input id="rsaMessage" value="4" type="number" />
+    <button onclick="rsaEncrypt()">Encrypt</button>
+    <p id="rsaCipher"></p>
+    <button onclick="rsaDecrypt()">Decrypt</button>
+    <p id="rsaPlain"></p>
+
+    <button onclick="showPage('caesarPage')">⬅ Caesar Cipher</button>
+    <button onclick="showPage('mainPage')">🏠 Home</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
